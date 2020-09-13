@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, request, jsonify, make_response
 from werkzeug.security import generate_password_hash, check_password_hash
 from db import db_connect
-from auth import require_auth_token, assert_ownsership
+from auth import require_auth_token
 import datetime
 import jwt
 import psycopg2
