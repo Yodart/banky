@@ -22,7 +22,7 @@ def create_deposit(current_account, db_cursor, db_connection):
         db_cursor.execute(
             "UPDATE accounts SET balance = balance + %s WHERE account_number = %s", (ammount, account_number))
         db_connection.commit()
-        return jsonify({'message': 'Ammounted Deposited!'}), 401
+        return jsonify({'message': 'Ammounted Deposited!'}), 200
     except:
         return {'error': "Unable to make deposit", "traceback": str(sys.exc_info())}, 401
 
